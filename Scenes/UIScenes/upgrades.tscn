@@ -1,0 +1,241 @@
+[gd_scene load_steps=6 format=3 uid="uid://60l0wvn25j4q"]
+
+[ext_resource type="Script" path="res://Scenes/Upgrades.gd" id="1_eqabq"]
+[ext_resource type="Texture2D" uid="uid://by8yjabah7oef" path="res://Art/UI/Button.png" id="2_0xgx7"]
+[ext_resource type="Texture2D" uid="uid://12jus5q6p3i3" path="res://Art/UI/ButtonPressed.png" id="3_vf4jl"]
+[ext_resource type="FontFile" uid="uid://5dp2m40qp7cv" path="res://Art/Fonts/Silkscreen/Silkscreen-Regular.ttf" id="4_fw4il"]
+[ext_resource type="Script" path="res://Scenes/UpgradesManager.gd" id="5_2pbrv"]
+
+[node name="Upgrades" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eqabq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 300.0
+offset_top = 400.0
+offset_right = 3770.0
+offset_bottom = 1940.0
+scale = Vector2(0.35, 0.35)
+size_flags_horizontal = 0
+theme_override_constants/separation = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(1720, 700)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 50
+
+[node name="PushStrenghtButton" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+texture_normal = ExtResource("2_0xgx7")
+texture_pressed = ExtResource("3_vf4jl")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/PushStrenghtButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -77.0
+offset_right = 180.0
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_fw4il")
+theme_override_font_sizes/font_size = 120
+text = "Push 
+strenght"
+horizontal_alignment = 1
+
+[node name="AngleButton" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_0xgx7")
+texture_pressed = ExtResource("3_vf4jl")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/AngleButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -77.0
+offset_right = 180.0
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_fw4il")
+theme_override_font_sizes/font_size = 120
+text = "Angle"
+
+[node name="BouncinessButton" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_0xgx7")
+texture_pressed = ExtResource("3_vf4jl")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/BouncinessButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -77.0
+offset_right = 180.0
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_fw4il")
+theme_override_font_sizes/font_size = 100
+text = "Bounciness"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(1720, 700)
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="PushTimesButton" type="TextureButton" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_0xgx7")
+texture_pressed = ExtResource("3_vf4jl")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/PushTimesButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -77.0
+offset_right = 180.0
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_fw4il")
+theme_override_font_sizes/font_size = 120
+text = "Push 
+Times"
+
+[node name="LivesButton" type="TextureButton" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_0xgx7")
+texture_pressed = ExtResource("3_vf4jl")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/LivesButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -77.0
+offset_right = 180.0
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_fw4il")
+theme_override_font_sizes/font_size = 120
+text = "Lives"
+
+[node name="MassButton" type="TextureButton" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_0xgx7")
+texture_pressed = ExtResource("3_vf4jl")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/MassButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -77.0
+offset_right = 180.0
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_fw4il")
+theme_override_font_sizes/font_size = 120
+text = "Mass"
+
+[node name="UpgradesManager" type="Control" parent="." groups=["UpgradeManager"]]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_2pbrv")
+
+[node name="PlayAgainButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.835417
+anchor_top = 0.837037
+anchor_right = 1.33542
+anchor_bottom = 1.28148
+scale = Vector2(0.3, 0.3)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+texture_normal = ExtResource("2_0xgx7")
+texture_pressed = ExtResource("3_vf4jl")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="PlayAgainButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -77.0
+offset_right = 180.0
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_fw4il")
+theme_override_font_sizes/font_size = 120
+text = "Play
+Again"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/PushStrenghtButton" to="." method="_on_push_strenght_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/AngleButton" to="." method="_on_angle_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/BouncinessButton" to="." method="_on_bounciness_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/PushTimesButton" to="." method="_on_push_times_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/LivesButton" to="." method="_on_lives_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/MassButton" to="." method="_on_mass_button_pressed"]
+[connection signal="pressed" from="PlayAgainButton" to="." method="_on_play_again_button_pressed"]

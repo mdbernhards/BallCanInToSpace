@@ -1,0 +1,167 @@
+[gd_scene load_steps=9 format=3 uid="uid://pts8jt3rgmtb"]
+
+[ext_resource type="PackedScene" uid="uid://4yha4uk2aq22" path="res://Scenes/player_ball.tscn" id="1_k4a87"]
+[ext_resource type="PackedScene" uid="uid://c1p8l6psnry8p" path="res://Scenes/grass_tile.tscn" id="2_7c80l"]
+[ext_resource type="Script" path="res://Scenes/Map.gd" id="2_25f1s"]
+[ext_resource type="Texture2D" uid="uid://dp01ccoojobnj" path="res://Art/Backgrounds/BlueBackground.png" id="2_q7fyk"]
+[ext_resource type="Texture2D" uid="uid://by8yjabah7oef" path="res://Art/UI/Button.png" id="5_n7u1q"]
+[ext_resource type="Texture2D" uid="uid://12jus5q6p3i3" path="res://Art/UI/ButtonPressed.png" id="6_e1rte"]
+[ext_resource type="FontFile" uid="uid://5dp2m40qp7cv" path="res://Art/Fonts/Silkscreen/Silkscreen-Regular.ttf" id="7_e4bsu"]
+[ext_resource type="PackedScene" uid="uid://60l0wvn25j4q" path="res://Scenes/UIScenes/upgrades.tscn" id="8_k1p6r"]
+
+[node name="TheGame" type="Node2D"]
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Background" type="TextureRect" parent="UILayer"]
+z_as_relative = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_q7fyk")
+stretch_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="TextureButton" type="TextureButton" parent="UILayer/Background" groups=["PushButton"]]
+layout_mode = 0
+offset_left = 1578.0
+offset_top = 83.0
+offset_right = 2538.0
+offset_bottom = 563.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("5_n7u1q")
+texture_pressed = ExtResource("6_e1rte")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="UILayer/Background/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -77.0
+offset_right = 180.0
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_e4bsu")
+theme_override_font_sizes/font_size = 120
+text = "Push"
+
+[node name="Map" type="Node2D" parent="." groups=["Map"]]
+script = ExtResource("2_25f1s")
+
+[node name="GrassTile" parent="Map" instance=ExtResource("2_7c80l")]
+visible = false
+position = Vector2(-24, 1000)
+
+[node name="GrassTile2" parent="Map" instance=ExtResource("2_7c80l")]
+visible = false
+position = Vector2(136, 1000)
+
+[node name="Marker2D" type="Marker2D" parent="Map"]
+position = Vector2(-1000, 1000)
+gizmo_extents = 100.1
+
+[node name="PlayerBall" parent="." instance=ExtResource("1_k4a87")]
+position = Vector2(156, 790)
+
+[node name="Camera2D" type="Camera2D" parent="PlayerBall"]
+offset = Vector2(0, -350)
+zoom = Vector2(0.1, 0.1)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+metadata/_edit_lock_ = true
+
+[node name="GameOverTimer" type="Timer" parent="PlayerBall"]
+wait_time = 3.0
+one_shot = true
+
+[node name="MenuLayer" type="CanvasLayer" parent="."]
+
+[node name="GameOverGrayOut" type="ColorRect" parent="MenuLayer" groups=["GameOverScreen"]]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.12549, 0.12549, 0.12549, 0.729412)
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="MenuLayer/GameOverGrayOut"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -516.5
+offset_right = 516.5
+offset_bottom = 193.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_e4bsu")
+theme_override_font_sizes/font_size = 150
+text = "Game Over!"
+
+[node name="Label2" type="Label" parent="MenuLayer/GameOverGrayOut"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -365.0
+offset_right = 192.0
+offset_bottom = -281.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_e4bsu")
+theme_override_font_sizes/font_size = 65
+text = "Upgrades"
+
+[node name="Upgrades" parent="MenuLayer/GameOverGrayOut" instance=ExtResource("8_k1p6r")]
+layout_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="PushingPButton" type="TextureButton" parent="MenuLayer/GameOverGrayOut" groups=["PushButton"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.833854
+anchor_top = 0.396296
+anchor_right = 1.33385
+anchor_bottom = 0.840741
+scale = Vector2(0.3, 0.3)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+texture_normal = ExtResource("5_n7u1q")
+texture_pressed = ExtResource("6_e1rte")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="MenuLayer/GameOverGrayOut/PushingPButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -77.0
+offset_right = 180.0
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_e4bsu")
+theme_override_font_sizes/font_size = 120
+text = "Push me"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="UILayer/Background/TextureButton" to="PlayerBall" method="_on_texture_button_pressed"]
+[connection signal="timeout" from="PlayerBall/GameOverTimer" to="PlayerBall" method="_on_game_over_timer_timeout"]
+[connection signal="pressed" from="MenuLayer/GameOverGrayOut/PushingPButton" to="PlayerBall" method="_on_texture_button_pressed"]
