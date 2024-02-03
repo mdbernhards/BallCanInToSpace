@@ -1,0 +1,118 @@
+[gd_scene load_steps=4 format=3 uid="uid://dskeqo1vppu7g"]
+
+[ext_resource type="FontFile" uid="uid://5dp2m40qp7cv" path="res://Art/Fonts/Silkscreen/Silkscreen-Regular.ttf" id="1_6qoum"]
+[ext_resource type="Texture2D" uid="uid://by8yjabah7oef" path="res://Art/UI/Button.png" id="2_edkqr"]
+[ext_resource type="Texture2D" uid="uid://12jus5q6p3i3" path="res://Art/UI/ButtonPressed.png" id="3_5qgqo"]
+
+[node name="GameOverScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverGrayOut" type="ColorRect" parent="." groups=["GameOverScreen"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.12549, 0.12549, 0.12549, 0.729412)
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="GameOverGrayOut"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -516.5
+offset_right = 516.5
+offset_bottom = 193.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_6qoum")
+theme_override_font_sizes/font_size = 150
+text = "Game Over!"
+
+[node name="Label2" type="Label" parent="GameOverGrayOut"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -494.0
+offset_top = -356.0
+offset_right = 81.0
+offset_bottom = -278.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_6qoum")
+theme_override_font_sizes/font_size = 55
+text = "Coins Collected:"
+
+[node name="UpgradeButton" type="TextureButton" parent="GameOverGrayOut"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -335.0
+offset_top = -200.0
+offset_right = 625.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.5)
+texture_normal = ExtResource("2_edkqr")
+texture_pressed = ExtResource("3_5qgqo")
+
+[node name="Label" type="Label" parent="GameOverGrayOut/UpgradeButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -325.0
+offset_top = -87.0
+offset_right = 325.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.2)
+theme_override_fonts/font = ExtResource("1_6qoum")
+theme_override_font_sizes/font_size = 110
+text = "Upgrades"
+
+[node name="MainMenuButton" type="TextureButton" parent="GameOverGrayOut"]
+layout_mode = 0
+offset_left = 625.0
+offset_top = 670.0
+offset_right = 1585.0
+offset_bottom = 1150.0
+scale = Vector2(0.7, 0.5)
+texture_normal = ExtResource("2_edkqr")
+texture_pressed = ExtResource("3_5qgqo")
+
+[node name="Label" type="Label" parent="GameOverGrayOut/MainMenuButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -325.0
+offset_top = -87.0
+offset_right = 325.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.2)
+theme_override_fonts/font = ExtResource("1_6qoum")
+theme_override_font_sizes/font_size = 110
+text = "Main Menu"

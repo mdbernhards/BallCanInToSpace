@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://daya6fcv12pc3"]
+
+[ext_resource type="Texture2D" uid="uid://b7i7ux0dohd55" path="res://Art/Assets/BoardOnAPipe.png" id="1_oddey"]
+
+[node name="BoardOnAPipe" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_oddey")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-233, -145, 221, 150, 163, 215, -85, 97, -165, 194, -294, 191, -296, 34, -259, 2, -317, -21, -312, -64)

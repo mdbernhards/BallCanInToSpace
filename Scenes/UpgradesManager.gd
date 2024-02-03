@@ -7,6 +7,9 @@ var PushTimesTier = 0
 var LivesTier = 0
 var MassTier = 0
 
+var FrictionTier = 0
+var DropHeightTier = 0
+
 var PlayerBall
 
 func _ready():

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://powqgs78e38d"]
+
+[ext_resource type="PackedScene" uid="uid://dalxc8w2kk3be" path="res://Scenes/UIScenes/in_game_ui_layer.tscn" id="1_p5rp5"]
+[ext_resource type="PackedScene" uid="uid://xi0rj7ogwtwa" path="res://Scenes/UIScenes/menu_layer.tscn" id="2_urnvg"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="InGameLayer" parent="." instance=ExtResource("1_p5rp5")]
+
+[node name="MenuLayer" parent="." instance=ExtResource("2_urnvg")]

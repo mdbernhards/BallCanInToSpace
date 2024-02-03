@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://dalxc8w2kk3be"]
+
+[ext_resource type="Texture2D" uid="uid://dp01ccoojobnj" path="res://Art/Backgrounds/BlueBackground.png" id="1_ij2w6"]
+[ext_resource type="Texture2D" uid="uid://by8yjabah7oef" path="res://Art/UI/Button.png" id="2_xd2fb"]
+[ext_resource type="Texture2D" uid="uid://12jus5q6p3i3" path="res://Art/UI/ButtonPressed.png" id="3_673bs"]
+[ext_resource type="FontFile" uid="uid://5dp2m40qp7cv" path="res://Art/Fonts/Silkscreen/Silkscreen-Regular.ttf" id="4_5c8qb"]
+
+[node name="InGameUILayer" type="CanvasLayer"]
+layer = -1
+
+[node name="Background" type="TextureRect" parent="."]
+z_as_relative = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ij2w6")
+stretch_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="TextureButton" type="TextureButton" parent="Background" groups=["PushButton"]]
+layout_mode = 0
+offset_left = 1578.0
+offset_top = 83.0
+offset_right = 2538.0
+offset_bottom = 563.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("2_xd2fb")
+texture_pressed = ExtResource("3_673bs")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Background/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -77.0
+offset_right = 180.0
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_5c8qb")
+theme_override_font_sizes/font_size = 120
+text = "Push"

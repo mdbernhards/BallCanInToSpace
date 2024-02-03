@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c4lh4msgwpj0i" path="res://Art/Ground/Grass.png" id="1_x7flt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kagmk"]
-size = Vector2(160, 160)
+size = Vector2(160, 125)
 
 [node name="GrassTile" type="StaticBody2D"]
 
@@ -11,5 +11,5 @@ size = Vector2(160, 160)
 texture = ExtResource("1_x7flt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
+position = Vector2(0, 17.5)
 shape = SubResource("RectangleShape2D_kagmk")

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://xi0rj7ogwtwa"]
+
+[ext_resource type="PackedScene" uid="uid://dskeqo1vppu7g" path="res://Scenes/UIScenes/game_over_screen.tscn" id="1_xi1w8"]
+[ext_resource type="PackedScene" uid="uid://60l0wvn25j4q" path="res://Scenes/UIScenes/upgrades.tscn" id="2_5d7us"]
+
+[node name="MenuLayer" type="CanvasLayer"]
+
+[node name="GameOverScreen" parent="." instance=ExtResource("1_xi1w8")]
+
+[node name="UpgradesScreen" parent="." instance=ExtResource("2_5d7us")]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="SettingsScreen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MainMenuScreen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

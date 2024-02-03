@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://bidlw0r6uasdt"]
+
+[ext_resource type="Texture2D" uid="uid://b7jqacm1jm6yn" path="res://Art/Assets/CatapultArm.png" id="1_87m8a"]
+[ext_resource type="Script" path="res://Scenes/catapult.gd" id="1_ly4ge"]
+[ext_resource type="Texture2D" uid="uid://bkioenutic2aa" path="res://Art/Assets/CatapultBase.png" id="2_h6oea"]
+
+[sub_resource type="Animation" id="Animation_hulvv"]
+resource_name = "Shoot"
+length = 2.5
+step = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0153207, 0.295179, 0.7, 0.952156, 2.43701),
+"transitions": PackedFloat32Array(1, 1.62451, 0.329877, 2.73208, 10.9283),
+"update": 0,
+"values": [0.0523599, -0.0872665, 2.0944, 1.5708, 0.0523599]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8efed"]
+_data = {
+"Shoot": SubResource("Animation_hulvv")
+}
+
+[node name="Catapult" type="Node2D"]
+position = Vector2(826, 653)
+script = ExtResource("1_ly4ge")
+
+[node name="Arm" type="AnimatableBody2D" parent="."]
+position = Vector2(0, -9)
+rotation = 0.0523599
+
+[node name="Sprite2D" type="Sprite2D" parent="Arm"]
+position = Vector2(-230, -19)
+texture = ExtResource("1_87m8a")
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Arm"]
+visible = false
+polygon = PackedVector2Array(10, 21, -420, 21, -450, 0, -480, -48, -471, -44, -453, -29, -436, -17, -405, -12, -381, -12, -358, -17, -337, -24, -323, -31, -308, -48, -301, -48, -317, -18, 9, -18, 9, -9, 20, -9, 20, 11, 10, 11)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Arm"]
+libraries = {
+"": SubResource("AnimationLibrary_8efed")
+}
+
+[node name="Base" type="AnimatableBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Base"]
+position = Vector2(-95, -224)
+texture = ExtResource("2_h6oea")
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Base"]
+visible = false
+polygon = PackedVector2Array(244, 22, 212, 56, 165, 55, 143, 26, -145, 26, -167, 56, -215, 56, -239, 25, -415, 25, -436, 0, -412, -24, -242, -22, -212, -55, -166, -52, -144, -25, 145, -25, 167, -54, 215, -53, 245, -21)
+
+[node name="60Pos" type="Marker2D" parent="."]
+position = Vector2(-186, -358)
+
+[node name="3Pos" type="Marker2D" parent="."]
+position = Vector2(-390, -48)
