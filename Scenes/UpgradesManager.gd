@@ -1,14 +1,21 @@
 extends Node
 
+#Money
+var TotalCoins = 0
+
+#Basic upgrades
 var PushStrenghtTier = 0
 var AngleTier = 0
 var BouncinessTier = 0
 var PushTimesTier = 0
 var LivesTier = 0
 var MassTier = 0
-
 var FrictionTier = 0
 var DropHeightTier = 0
+
+#Item enabled upgrades
+var isRampEnabled
+var isCatapultEnabled
 
 var PlayerBall
 

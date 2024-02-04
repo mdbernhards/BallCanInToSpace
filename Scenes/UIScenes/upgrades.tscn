@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Scenes/UpgradesManager.gd" id="5_2pbrv"]
 [ext_resource type="Script" path="res://Scenes/UIScenes/BasicUpgrades.gd" id="5_7dm43"]
 
-[node name="Upgrades" type="Control"]
+[node name="UpgradeScreen" type="Control" groups=["UpgradeScreen"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -243,7 +243,6 @@ theme_override_font_sizes/font_size = 110
 text = "Rocket"
 
 [node name="BasicUpgrades" type="HBoxContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 offset_left = 50.0001

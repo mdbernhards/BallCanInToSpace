@@ -8,16 +8,20 @@ var StrenghtY = 5
 var Lives = 1
 var PushTimes = 1
 
+var CoinsCollectedThisRun = 0
+var OriginalPosX
+
 var UpgradeManager
 
 func _ready():
 	UpgradeManager = get_tree().get_first_node_in_group("UpgradeManager")
+	OriginalPosX = position.x
 
 func _process(delta):
 	if HasGameStarted:
 		CheckIfGameOver()
 
-func _on_texture_button_pressed():
+func PushBall():
 	HasGameStarted = true
 	PushTimes -= 1
 	if PushTimes <= 1:
@@ -37,4 +41,10 @@ func CheckIfGameOver():
 
 func _on_game_over_timer_timeout():
 	HasGameStarted = false
-	get_tree().get_first_node_in_group("GameOverScreen").visible = true
+	CalculateCoinsCollected()
+	var GameOverScreen = get_tree().get_first_node_in_group("GameOverScreen")
+	GameOverScreen.ShowGameOverScreen()
+
+func CalculateCoinsCollected():
+	CoinsCollectedThisRun += round(position.x - OriginalPosX)
+	UpgradeManager.TotalCoins += CoinsCollectedThisRun
