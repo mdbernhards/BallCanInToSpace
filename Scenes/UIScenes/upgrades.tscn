@@ -37,15 +37,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -426.0
+offset_left = -956.0
 offset_top = -359.0
-offset_right = 149.0
+offset_right = 961.0
 offset_bottom = -281.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_fw4il")
 theme_override_font_sizes/font_size = 55
 text = "Coins Collected:"
+horizontal_alignment = 1
 
 [node name="UpgradeTabs" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -243,6 +244,7 @@ theme_override_font_sizes/font_size = 110
 text = "Rocket"
 
 [node name="BasicUpgrades" type="HBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 offset_left = 50.0001
@@ -502,7 +504,6 @@ theme_override_font_sizes/font_size = 120
 text = "Mass"
 
 [node name="MoneyUpgrades" type="HBoxContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 offset_left = 50.0001
@@ -544,8 +545,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_fw4il")
 theme_override_font_sizes/font_size = 120
-text = "Money
-Upgrades"
+text = "Coins
+value"
 horizontal_alignment = 1
 
 [node name="AngleButton" type="TextureButton" parent="MoneyUpgrades/VBoxContainer"]
@@ -571,7 +572,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_fw4il")
 theme_override_font_sizes/font_size = 120
-text = "Angle"
+text = "Distance
+Value"
+horizontal_alignment = 1
 
 [node name="BouncinessButton" type="TextureButton" parent="MoneyUpgrades/VBoxContainer"]
 layout_mode = 2
@@ -596,7 +599,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_fw4il")
 theme_override_font_sizes/font_size = 100
-text = "Bounciness"
+text = "Coins"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MoneyUpgrades"]
 custom_minimum_size = Vector2(1220, 0)

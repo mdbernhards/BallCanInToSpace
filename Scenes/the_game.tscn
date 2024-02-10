@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://pts8jt3rgmtb"]
+[gd_scene load_steps=12 format=3 uid="uid://pts8jt3rgmtb"]
 
 [ext_resource type="PackedScene" uid="uid://4yha4uk2aq22" path="res://Scenes/player_ball.tscn" id="1_k4a87"]
 [ext_resource type="PackedScene" uid="uid://powqgs78e38d" path="res://Scenes/UIScenes/ui.tscn" id="1_peyeb"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bidlw0r6uasdt" path="res://Scenes/catapult.tscn" id="6_77g38"]
 [ext_resource type="PackedScene" uid="uid://daya6fcv12pc3" path="res://Scenes/board_on_a_pipe.tscn" id="7_mko2r"]
 [ext_resource type="PackedScene" uid="uid://j3ika4qqwy7" path="res://Scenes/grass_top.tscn" id="8_drnxt"]
+[ext_resource type="Texture2D" uid="uid://d2aw4bxhf8wt1" path="res://Art/Ground/GrassBlocks/Grass2.png" id="8_h3iij"]
+[ext_resource type="Texture2D" uid="uid://cbqtbdeklt7yt" path="res://Art/Ground/GrassBlocks/GrassHill.png" id="9_i7s1f"]
 [ext_resource type="Script" path="res://Singletons/FileManager.gd" id="9_nuxn2"]
 [ext_resource type="Script" path="res://Singletons/UpgradeData.gd" id="11_na631"]
 
@@ -53,7 +55,15 @@ position = Vector2(543, 860)
 wait_time = 2.0
 one_shot = true
 
-[node name="UpgradeData" type="Node" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="InGame/Map"]
+position = Vector2(296, 1000)
+texture = ExtResource("8_h3iij")
+
+[node name="Sprite2D2" type="Sprite2D" parent="InGame/Map"]
+position = Vector2(-184, 1000)
+texture = ExtResource("9_i7s1f")
+
+[node name="UpgradeData" type="Node" parent="." groups=["UpgradeData"]]
 script = ExtResource("11_na631")
 
 [node name="FileManager" type="Node" parent="."]

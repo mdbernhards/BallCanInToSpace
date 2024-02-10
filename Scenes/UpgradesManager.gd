@@ -18,26 +18,27 @@ var isRampEnabled
 var isCatapultEnabled
 
 var PlayerBall
+var UpgradeData
+var BasicData
 
 func _ready():
 	PlayerBall = get_tree().get_first_node_in_group("Player")
+	UpgradeData = get_tree().get_first_node_in_group("UpgradeData").upgrades
+	BasicData = UpgradeData["Basic"]
 
 func _process(delta):
 	pass
 
-var StrenghtX = 5
-var StrenghtY = 5
-
 func SetUpgrades():
-	var tempStrenghtX = 5 + (PushStrenghtTier * 5)
+	var tempStrenghtX = 5 + (PushStrenghtTier * BasicData["PushStrenght"]["value"])
 	
 	PlayerBall.StrenghtX = tempStrenghtX
-	PlayerBall.StrenghtY = tempStrenghtX * (AngleTier/100.0 * 5.0)
-	PlayerBall.physics_material_override.bounce = 1 + (BouncinessTier * 5)
-	#PlayerBall.set_friction(1 + (BouncinessTier * 5))
-	PlayerBall.PushTimes = 1 + PushTimesTier
-	PlayerBall.Lives = 1 + LivesTier
-	PlayerBall.mass = 1 + (25 * MassTier)
+	PlayerBall.StrenghtY = tempStrenghtX * (AngleTier/100.0 * BasicData["Angle"]["value"])
+	PlayerBall.physics_material_override.bounce = 1 + (BouncinessTier * BasicData["Bounciness"]["value"])
+	#PlayerBall.set_friction(1 + (FrictionTier * BasicData["GroundFriction"]["value"]))
+	PlayerBall.PushTimes = BasicData["PushTimes"]["value"] + PushTimesTier
+	PlayerBall.Lives = BasicData["Lives"]["value"] + LivesTier
+	PlayerBall.mass = 1 + (BasicData["Mass"]["value"] * MassTier)
 
 func SetPushTimes():
 	PlayerBall.PushTimes = 1 + PushTimesTier

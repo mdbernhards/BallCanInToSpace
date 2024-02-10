@@ -61,7 +61,29 @@ var upgrades = {
 			"type": "add",
 		},
 	},
-	"Money" : {},
+	"Money" : {
+		"Coins" : {
+			"tiers" : 3,
+			"value" : 10,
+			"start_price": 35,
+			"price_increase" : 30,
+			"type": "add",
+			},
+		"DistanceValue" : {
+			"tiers" : 3,
+			"value" : 10,
+			"start_price": 35,
+			"price_increase" : 30,
+			"type": "add",
+			},
+		"CoinValue" : {
+			"tiers" : 3,
+			"value" : 10,
+			"start_price": 35,
+			"price_increase" : 30,
+			"type": "add",
+			},
+		},
 	"Ramp" : {
 		"Tier" : {
 			"tiers" : 3,
@@ -85,7 +107,29 @@ var upgrades = {
 			"type": "add",
 		},
 	},
-	"Catapult" : {},
+	"Catapult" : {
+		"Unlocked" : {
+			"tiers" : 1,
+			"value" : 1,
+			"start_price": 35,
+			"price_increase" : 30,
+			"type": "add",
+		},
+		"Speed" : {
+			"tiers" : 3,
+			"value" : 10,
+			"start_price": 35,
+			"price_increase" : 30,
+			"type": "add",
+		},
+		"Size" : {
+			"tiers" : 3,
+			"value" : 10,
+			"start_price": 35,
+			"price_increase" : 30,
+			"type": "add",
+		},
+	},
 	"Glider/Wings" : {},
 	"Cannon" : {},
 	"Plane" : {},

@@ -28,7 +28,7 @@ shape = SubResource("CircleShape2D_miyn0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -350)
-zoom = Vector2(0.08, 0.08)
+zoom = Vector2(0.1, 0.1)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 metadata/_edit_lock_ = true
